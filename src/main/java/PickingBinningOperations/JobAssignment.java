@@ -42,6 +42,7 @@ public class JobAssignment {
         Constants.sequence_id = js.getInt("picking[0].sku_location_info[0].sequence_id");
         Constants.sku_id_assigned = js.getInt("picking[0].sku_location_info[0].sku_id");
         Constants.task_id = js.getInt("picking[0].sku_location_info[0].task_id");
+        Constants.order_id_job=js.getInt("picking[0].sku_location_info[0]order_id");
 
 
     }

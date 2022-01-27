@@ -78,12 +78,13 @@ public class Constants {
     static String bb_channel_type_value = "bb-ios";
     public static String po_order_id;
     public static int order_id;
+    public static int order_id_job;
     public static String BBADMINAUTHTOKEN;
     public static void setBBADMINAUTHTOKEN(){
         if(env_type.equals("QAS")){
-            BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IldCV0RSb3VXMVU4TEJRIiwidWlkIjoyMDg1OTUsInRpbWUiOjE2Mzk3NDY1NjkuMDUxNDYzfQ.AxUTloSxRNm168egg5RQnTDiSbmAH0YZLOGcM9hJiA";
+            BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IldCV0RSb3VXMVU4TEJRIiwidWlkIjoyMDg1OTUsInRpbWUiOjE2Mzk3NDY1NjkuMDUxNDYzfQ.AxUTloSxRNm168egg5RQnTDiSbmAH0YZLOGcM9hJiAk";
         }
-        else BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IkF6WGRlLVFUNHdid0FBIiwidWlkIjoyMTAwMzYsInRpbWUiOjE2NDA2NzY4MzcuODAxOTk1fQ.K9JfDVDu-wk5TH08_biYkdE0fsdGCM-uOZwinW0PZk";
+        else BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IkF6WGRlLVFUNHdid0FBIiwidWlkIjoyMTAwMzYsInRpbWUiOjE2NDA2NzY4MzcuODAxOTk1fQ.K9JfDVDu-wk5TH08_biYkdE0fsdGCM-uOZwinW0PZkU";
     }
     public static String getBBADMINAUTHTOKEN(){
         return BBADMINAUTHTOKEN;
