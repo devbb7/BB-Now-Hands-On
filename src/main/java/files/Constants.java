@@ -78,6 +78,7 @@ public class Constants {
     static String bb_channel_type_value = "bb-ios";
     public static String po_order_id;
     public static int order_id;
+    public static int order_id_job;
     public static String BBADMINAUTHTOKEN;
     public static void setBBADMINAUTHTOKEN(){
         if(env_type.equals("QAS")){

@@ -55,7 +55,7 @@ public class Payload {
 
     public static String bagLinking(){
         return "{\n" +
-                "  \"order_id\":"+ Constants.order_id+",\n" +
+                "  \"order_id\":"+ Constants.order_id_job+",\n" +
                 "  \"container_label\":\""+Constants.bag_id+"\"\n" +
                 "}";
     }
@@ -83,7 +83,7 @@ public class Payload {
                 "                \n" +
                 "                    \"is_processed\":"+Constants.is_processed +",\n" +
                 "                    \"location_id\":"+Constants.location_id+",\n" +
-                "                    \"order_id\":"+ Constants.order_id+",\n" +
+                "                    \"order_id\":"+ Constants.order_id_job+",\n" +
                 "                    \"quantity_picked\":"+ Constants.quantity_recommended+",\n" +
                 "                    \"quantity_recommended\":"+ Constants.quantity_recommended+",\n" +
                 "                    \"quantity_weight\":"+Constants.quantity_weight+",\n" +
@@ -112,7 +112,7 @@ public class Payload {
     public static String pickCompletionBody(){
         return "{\n" +
                 "    \"job_id\":"+Constants.job_id+",\n" +
-                "    \"order_id\":"+Constants.order_id +"\n" +
+                "    \"order_id\":"+Constants.order_id_job +"\n" +
                 "}\n";
     }
 
@@ -125,7 +125,7 @@ public class Payload {
                 "  ],\n" +
                 "  \"bin_loc\":\""+Constants.available_bin_loc+"\",\n" +
                 "  \"event_type\": \"binning\",\n" +
-                "  \"order_id\":"+Constants.order_id+"\n" +
+                "  \"order_id\":"+Constants.order_id_job+"\n" +
                 "}";
     }
 
