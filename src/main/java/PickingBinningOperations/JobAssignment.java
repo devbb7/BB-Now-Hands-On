@@ -1,5 +1,6 @@
 package PickingBinningOperations;
 import files.Constants;
+import files.RawToJSON;
 import files.RequestHeaders;
 import io.cucumber.java.en.Then;
 import io.restassured.http.Header;
@@ -29,7 +30,7 @@ public class JobAssignment {
         baseURI = Constants.getBaseURI2();
         String job_assignment_response = given().log().all().headers(header).when().post("warehousecomposition/admin/v1/fcs/"+Constants.getFc_id()+"/jobs").
                 then().log().all().assertThat().statusCode(200).extract().response().asString();
-        JsonPath js = new JsonPath(job_assignment_response);
+        JsonPath js = RawToJSON.rawToJson(job_assignment_response);
         Constants.job_id = js.getInt("picking[0].job_id");
         Constants.available_qty = js.getInt("picking[0].sku_location_info[0].available_qty");
         Constants.batch_id = js.getInt("picking[0].sku_location_info[0].batch_id");

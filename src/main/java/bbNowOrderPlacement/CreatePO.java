@@ -2,6 +2,7 @@ package bbNowOrderPlacement;
 
 import files.Constants;
 import files.Payload;
+import files.RawToJSON;
 import files.RequestHeaders;
 import io.cucumber.java.en.Then;
 import io.restassured.http.Header;
@@ -32,7 +33,7 @@ public class CreatePO {
         String po_order_response = given().log().all().headers(header).body(Payload.createPOBody()).when().
                     post("/order/internal/v1/potentialorder").then().log().all().assertThat().statusCode(200).
                     extract().response().asString();
-        JsonPath js = new JsonPath(po_order_response);
+        JsonPath js = RawToJSON.rawToJson(po_order_response);
         Constants.po_order_id = js.getString("p_order_id");
     }
     }

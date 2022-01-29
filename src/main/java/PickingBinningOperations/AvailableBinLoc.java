@@ -1,6 +1,7 @@
 package PickingBinningOperations;
 
 import files.Constants;
+import files.RawToJSON;
 import files.RequestHeaders;
 import io.cucumber.java.en.Then;
 import io.restassured.http.Header;
@@ -25,7 +26,7 @@ public class AvailableBinLoc {
         baseURI = Constants.getBaseURI2();
         String location = given().headers(header).when().get("warehousecomposition/admin/planogram/v1/fcs/"+Constants.getFc_id()+"/delivery/binrecommendation").
                 then().log().all().assertThat().statusCode(200).extract().response().asString();
-        JsonPath js = new JsonPath(location);
+        JsonPath js = RawToJSON.rawToJson(location);
         Constants.available_bin_loc = js.getString("bin_loc");
     }
 }

@@ -2,6 +2,7 @@ package bbNowOrderPlacement;
 
 import files.Constants;
 import files.Payload;
+import files.RawToJSON;
 import files.RequestHeaders;
 import io.cucumber.java.en.Then;
 import io.restassured.http.Header;
@@ -30,7 +31,7 @@ public class CreateOrder {
         baseURI = Constants.getBaseURI1();
         String order_response = given().log().all().headers(header).header("Content-Type","application/json").body(Payload.createOrderBody()).
                 when().post("order/v1/order").then().log().all().assertThat().statusCode(200).extract().response().asString();
-        JsonPath js = new JsonPath(order_response);
+        JsonPath js = RawToJSON.rawToJson(order_response);
         Constants.order_id = js.getInt("orders[0].id");
 
 
