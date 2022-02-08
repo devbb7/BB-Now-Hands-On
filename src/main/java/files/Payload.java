@@ -1,8 +1,12 @@
 package files;
 
-import java.time.Instant;
+import org.json.JSONObject;
 
-import static files.Constants.po_order_id;
+import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
+
+import static files.Constants.*;
 
 public class Payload {
     public static String addToCartBody(){
@@ -53,79 +57,36 @@ public class Payload {
                 "}";
     }
 
-    public static String bagLinking(){
+    public static String bagLinking(int index){
         return "{\n" +
-                "  \"order_id\":"+ Constants.order_id_job+",\n" +
-                "  \"container_label\":\""+Constants.bag_id+"\"\n" +
+                "  \"order_id\":"+order_id_job_arr[index][0]+",\n" +
+                "  \"container_label\":\""+bag_id_arr[index]+"\"\n" +
                 "}";
     }
 
-    public static String taskCompletion(){
-        int len=Constants.bin_location.length();
-        if(len==8){
-            Constants.bin_loc_trimmed=Constants.bin_location;
-        }
-        else if(len==11) {
-            Constants.bin_loc_trimmed = Constants.bin_location.substring(0, Constants.bin_location.length() - 3);
-        }
-        else if(len==10) {
-            Constants.bin_loc_trimmed = Constants.bin_location.substring(0, Constants.bin_location.length() - 2);
-        }
-        return "{\n" +
-                "        \"sku_info\" :\n" +
-                "    [\n" +
-                "        {\n" +
-                "                   \n" +
-                "                    \"available_qty\":" +Constants.available_qty+",\n"+
-                "                    \"batch_id\":"+Constants.batch_id+",\n" +
-                "                    \"bin_id\":"+Constants.bin_id+",\n" +
-                "                    \"bin_location\":\""+Constants.bin_loc_trimmed+"\",\n" +
-                "                \n" +
-                "                    \"is_processed\":"+Constants.is_processed +",\n" +
-                "                    \"location_id\":"+Constants.location_id+",\n" +
-                "                    \"order_id\":"+ Constants.order_id_job+",\n" +
-                "                    \"quantity_picked\":"+ Constants.quantity_recommended+",\n" +
-                "                    \"quantity_recommended\":"+ Constants.quantity_recommended+",\n" +
-                "                    \"quantity_weight\":"+Constants.quantity_weight+",\n" +
-                "                    \"sequence_id\":"+Constants.sequence_id+",\n" +
-                "                    \"sku_id\":"+ Constants.sku_id_assigned+",\n" +
-                "                    \"task_id\":"+Constants.task_id+",\n" +
-                "                    \"picking_timestamp\":\""+ Instant.now().toString()+"\",\n" +
-                "                \n" +
-                "            \"underpick_reason_id\": 0,\n" +
-                "            \"crates\" :\n" +
-                "                [\n" +
-                "                                {\n" +
-                "                                    \"type_id\": 0,\n" +
-                "                                    \"label\":\""+ Constants.bag_id+"\",\n" +
-                "                                    \"quantity\":"+Constants.quantity_recommended+",\n" +
-                "                    \"weight\":"+Constants.quantity_weight+",\n" +
-                "                    \"status\":\"open\",\n" +
-                "                    \"pick_timestamp\":\""+Instant.now().toString()+"\"\n" +
-                "                                }\n" +
-                "                        ]\n" +
-                "        }\n" +
-                "    ]\n" +
-                "}";
+
+
+    public static String taskCompletion(int index){
+        return sku_info_merged[index].toString();
     }
 
-    public static String pickCompletionBody(){
+    public static String pickCompletionBody(int index){
         return "{\n" +
-                "    \"job_id\":"+Constants.job_id+",\n" +
-                "    \"order_id\":"+Constants.order_id_job +"\n" +
+                "    \"job_id\":"+job_id_arr[index]+",\n" +
+                "    \"order_id\":"+order_id_job_arr[index][0] +"\n" +
                 "}\n";
     }
 
-    public static String orderBinningBody(){
+    public static String orderBinningBody(int index){
         return "{\n" +
                 "  \"container_info\": [\n" +
                 "    {\n" +
-                "      \"id\":\""+Constants.bag_id +"\"\n" +
+                "      \"id\":\""+bag_id_arr[index] +"\"\n" +
                 "    }\n" +
                 "  ],\n" +
                 "  \"bin_loc\":\""+Constants.available_bin_loc+"\",\n" +
                 "  \"event_type\": \"binning\",\n" +
-                "  \"order_id\":"+Constants.order_id_job+"\n" +
+                "  \"order_id\":"+order_id_job_arr[index][0]+"\n" +
                 "}";
     }
 

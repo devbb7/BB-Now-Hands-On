@@ -10,5 +10,4 @@ Feature: BBNow Order Placement to Binning flow using rest assured api automation
     Then I do bag linking
     Then I do task completion
     Then I do pick completion
-    Then I check for available bin location
-    Then I do order binning
+    Then I check for available bin location and bin the order

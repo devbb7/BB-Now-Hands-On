@@ -78,7 +78,6 @@ public class Constants {
     static String bb_channel_type_value = "bb-ios";
     public static String po_order_id;
     public static int order_id;
-    public static int order_id_job;
     public static String BBADMINAUTHTOKEN;
     public static void setBBADMINAUTHTOKEN(){
         if(env_type.equals("QAS")){
@@ -93,23 +92,25 @@ public class Constants {
     static String x_caller_value_picking ="IQ-APP";
     static String x_entry_context_id_picking = "102";
     static String x_entry_context_picking = "bb_internal";
-    public static int job_id;
-    public static int available_qty;
-    public static int batch_id;
-    public static int bin_id;
-    public static String bin_location;
-    public static String bin_loc_trimmed;
-    public static boolean is_processed;
-    public static int location_id;
-    public static int quantity_recommended;
-    public static int quantity_weight;
-    public static int sequence_id;
-    public static int sku_id_assigned;
-    public static int task_id;
-    public static String bag_id = "BB"+(int)(Math.random()*(9999999-1000000+1)+1000000);
+    public static int picking_size;
+    public static int[][] sku_loc_size_array;
+    public static int[] job_id_arr;
+    public static String[] bag_id_arr;
+    public static int[][] available_quantity_arr;
+    public static int[][] batch_id_arr;
+    public static int[][] bin_id_arr;
+    public static String[][] bin_loc_arr;
+    public static boolean[][] is_processed_arr;
+    public static int[][] location_id_arr;
+    public static int[][] order_id_job_arr;
+    public static int[][] quantity_recommended_arr;
+    public static int[][] quantity_weight_arr;
+    public static int[][] sequence_id_arr;
+    public static int[][] sku_id_assigned_arr;
+    public static int[][] task_id_arr;
+    public static Object[][] crate_info_arr;
+    public static String bin_loc_trimmed1=null;
+    public static Object[][] sku_info_internal;
+    public static Object[] sku_info_merged;
     public static String available_bin_loc;
-
-
-
-
 }
