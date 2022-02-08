@@ -10,6 +10,7 @@ import io.restassured.http.Headers;
 import java.util.ArrayList;
 import java.util.List;
 
+import static files.Constants.picking_size;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
@@ -25,9 +26,11 @@ public class PickCompletion {
         list.add(RequestHeaders.x_entry_context_picking);
         list.add(RequestHeaders.cookie);
         Headers header = new Headers(list);
-        baseURI = Constants.getBaseURI2();
-        given().log().all().headers(header).header("Content-Type","application/json")
-                .body(Payload.pickCompletionBody()).when().post("warehousecomposition/admin/pickingplatform/v1/fcs/"+Constants.getFc_id()+"/pickcomplete")
-                .then().log().all().assertThat().statusCode(200);
+        for(int i=0;i<picking_size;i++) {
+            baseURI = Constants.getBaseURI2();
+            given().log().all().headers(header).header("Content-Type", "application/json")
+                    .body(Payload.pickCompletionBody(i)).when().post("warehousecomposition/admin/pickingplatform/v1/fcs/" + Constants.getFc_id() + "/pickcomplete")
+                    .then().log().all().assertThat().statusCode(200);
+        }
     }
 }
