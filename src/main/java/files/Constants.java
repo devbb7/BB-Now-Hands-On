@@ -1,5 +1,13 @@
 package files;
 
+import files.pojo.Crates;
+import files.pojo.JobAssignmentResponse;
+import files.pojo.Picking;
+import files.pojo.SkuLocationInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Constants {
     public static String env_type;
     public static String baseURI1;
@@ -69,7 +77,7 @@ public class Constants {
         if(env_type.equals("QAS")){
             sku="10000171";
         }
-        else sku="10000016";
+        else sku="10000108";
     }
     public static String getSku(){
         return sku;
@@ -93,24 +101,13 @@ public class Constants {
     static String x_entry_context_id_picking = "102";
     static String x_entry_context_picking = "bb_internal";
     public static int picking_size;
-    public static int[][] sku_loc_size_array;
-    public static int[] job_id_arr;
-    public static String[] bag_id_arr;
-    public static int[][] available_quantity_arr;
-    public static int[][] batch_id_arr;
-    public static int[][] bin_id_arr;
-    public static String[][] bin_loc_arr;
-    public static boolean[][] is_processed_arr;
-    public static int[][] location_id_arr;
-    public static int[][] order_id_job_arr;
-    public static int[][] quantity_recommended_arr;
-    public static int[][] quantity_weight_arr;
-    public static int[][] sequence_id_arr;
-    public static int[][] sku_id_assigned_arr;
-    public static int[][] task_id_arr;
-    public static Object[][] crate_info_arr;
-    public static String bin_loc_trimmed1=null;
-    public static Object[][] sku_info_internal;
-    public static Object[] sku_info_merged;
-    public static String available_bin_loc;
+
+    public static JobAssignmentResponse jobAssignmentResponse;
+    public static List<Picking> pickingList = new ArrayList<>();
+    public static List<SkuLocationInfo> skuLocationInfoList= new ArrayList<>();
+    public static List<Integer> order_id_picking= new ArrayList<>();
+    public static List<Integer> job_id_picking = new ArrayList<>();
+    public static List<String> bag_id = new ArrayList<>();
+    public static String  available_bin_loc;
+
 }
