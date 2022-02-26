@@ -28,7 +28,7 @@ public class TaskCompletion {
         for(int i=0;i<picking_size;i++) {
             baseURI = Constants.getBaseURI2();
             given().log().all().headers(header).header("Content-Type", "application/json").
-                    body(Payload.taskCompletion(i)).when().put("warehousecomposition/admin/planogram/v1/fcs/" + Constants.getFc_id() + "/picking/jobs/" + job_id_arr[i])
+                    body(Payload.taskCompletion(i)).when().put("warehousecomposition/admin/planogram/v1/fcs/" + Constants.getFc_id() + "/picking/jobs/" + job_id_picking.get(i))
                     .then().log().all().assertThat().statusCode(200);
         }
     }

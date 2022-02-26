@@ -3,7 +3,6 @@ package PickingBinningOperations;
 import files.Constants;
 import files.Payload;
 import io.cucumber.java.en.Then;
-import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
 public class OrderTopPriority {
