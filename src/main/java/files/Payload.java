@@ -1,8 +1,7 @@
 package files;
 
+import com.google.gson.Gson;
 import files.pojo.*;
-import io.cucumber.core.internal.gherkin.deps.com.google.gson.Gson;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +9,8 @@ import java.util.List;
 import static files.Constants.*;
 
 public class Payload {
-    public static String addToCartBody(){
-        return "items[]="+Constants.getSku()+"_"+Constants.sku_quantity+"&slug=";
+    public static String addToCartBody(String sku,String qty){
+        return "items[]="+sku+"_"+qty+"&slug=";
     }
 
     public static String createPOBody(){

@@ -1,6 +1,5 @@
 package files;
 
-import files.pojo.Crates;
 import files.pojo.JobAssignmentResponse;
 import files.pojo.Picking;
 import files.pojo.SkuLocationInfo;
@@ -72,17 +71,6 @@ public class Constants {
     }
     static String entry_context_value = "bbnow";
     static String origin_value = "https://qas31.bigbasket.com";
-    static String sku = "";
-    public static void setSku(){
-        if(env_type.equals("QAS")){
-            sku="10000171";
-        }
-        else sku="10000108";
-    }
-    public static String getSku(){
-        return sku;
-    }
-    static String sku_quantity = "1";
     static String bb_channel_type_value = "bb-ios";
     public static String po_order_id;
     public static int order_id;
@@ -96,12 +84,10 @@ public class Constants {
     public static String getBBADMINAUTHTOKEN(){
         return BBADMINAUTHTOKEN;
     }
-
     static String x_caller_value_picking ="IQ-APP";
     static String x_entry_context_id_picking = "102";
     static String x_entry_context_picking = "bb_internal";
     public static int picking_size;
-
     public static JobAssignmentResponse jobAssignmentResponse;
     public static List<Picking> pickingList = new ArrayList<>();
     public static List<SkuLocationInfo> skuLocationInfoList= new ArrayList<>();

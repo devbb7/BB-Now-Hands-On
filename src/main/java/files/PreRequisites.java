@@ -13,6 +13,5 @@ public class PreRequisites {
         Constants.setMemberAddr();
         Constants.setMemberID();
         Constants.setVid();
-        Constants.setSku();
     }
 }

@@ -1,10 +1,10 @@
 package PickingBinningOperations;
+import com.google.gson.Gson;
 import files.Constants;
 
 import files.RequestHeaders;
 import java.util.*;
 import files.pojo.JobAssignmentResponse;
-import io.cucumber.core.internal.gherkin.deps.com.google.gson.Gson;
 import io.cucumber.java.en.Then;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
