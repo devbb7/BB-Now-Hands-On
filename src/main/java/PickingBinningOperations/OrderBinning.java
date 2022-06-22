@@ -20,7 +20,6 @@ public class OrderBinning {
 
     @Then("I check for available bin location and bin the order")
     public void iCheckForAvailableBinLocationAndBinTheOrder() throws InterruptedException {
-        Thread.sleep(2000);
         List<Header> list = new ArrayList<>();
         list.add(RequestHeaders.x_tracker);
         list.add(RequestHeaders.x_caller_picking);
@@ -29,10 +28,12 @@ public class OrderBinning {
         Headers header = new Headers(list);
         baseURI = Constants.getBaseURI2();
         for(int i=0;i<picking_size;i++) {
+            Thread.sleep(5000);
             String location = given().headers(header).when().get("warehousecomposition/admin/planogram/v1/fcs/" + Constants.getFc_id() + "/delivery/binrecommendation").
                     then().log().all().assertThat().statusCode(200).extract().response().asString();
             JsonPath js = RawToJSON.rawToJson(location);
             Constants.available_bin_loc = js.getString("bin_loc");
+            Thread.sleep(5000);
             given().log().all().headers(header).header("Content-Type", "application/json").body(Payload.orderBinningBody(i)).
                     when().post("warehousecomposition/admin/planogram/v1/fcs/" + Constants.getFc_id() + "/delivery/orderbinmapping").then().
                     log().all().assertThat().statusCode(200);

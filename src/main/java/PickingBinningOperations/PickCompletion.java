@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.given;
 public class PickCompletion {
     @Then("I do pick completion")
     public void pickCompletion() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         List<Header> list = new ArrayList<>();
         list.add(RequestHeaders.x_tracker);
         list.add(RequestHeaders.x_caller_picking);

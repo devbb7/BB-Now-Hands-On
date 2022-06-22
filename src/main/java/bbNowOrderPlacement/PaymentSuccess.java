@@ -23,6 +23,7 @@ public class PaymentSuccess {
         list.add(RequestHeaders.x_caller);
         Headers header = new Headers(list);
         baseURI = Constants.getBaseURI1();
+        Thread.sleep(5000);
         given().log().all().headers(header).header("Content-Type","application/json").body(Payload.paymentSuccessBody()).
                 when().post("order/internal/v1/order/payment_status").then().
                 log().all().assertThat().statusCode(200);

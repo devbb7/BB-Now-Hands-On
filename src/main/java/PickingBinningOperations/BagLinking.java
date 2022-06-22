@@ -16,7 +16,7 @@ import java.util.List;
 public class BagLinking {
     @Then("I do bag linking")
     public void bagLinking() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         List<Header> list = new ArrayList<>();
         list.add(RequestHeaders.x_tracker);
         list.add(RequestHeaders.x_caller_picking);

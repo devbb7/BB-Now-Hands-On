@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.*;
 
 public class AddToCart {
     @Then("I add sku items {string} with quantity {string} to cart")
-    public void addToCart(String sku_list,String qty_list){
+    public void addToCart(String sku_list,String qty_list) throws InterruptedException {
         String[] sku_array = sku_list.split(",");
         String[] qty_array = qty_list.split(",");
         List<Header> list = new ArrayList<>();
@@ -25,6 +25,7 @@ public class AddToCart {
         Headers header = new Headers(list);
         baseURI = Constants.getBaseURI1();
         for(int i=0;i<sku_array.length;i++) {
+            Thread.sleep(5000);
             given().headers(header).header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8").
                     body(Payload.addToCartBody(sku_array[i],qty_array[i])).when()
                     .post("basketService/msl/add-list-item-to-basket/")

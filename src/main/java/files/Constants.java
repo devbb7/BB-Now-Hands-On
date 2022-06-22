@@ -44,7 +44,7 @@ public class Constants {
         if(env_type.equals("QAS")){
             memberID="20049181";
         }
-        else memberID="19994818";
+        else memberID="19953583";
     }
     public static String getMemberID(){
         return memberID;
@@ -54,7 +54,7 @@ public class Constants {
         if(env_type.equals("QAS")){
              vid="20049181";
         }
-        else vid="19994818";
+        else vid="19953583";
     }
     public static String getVid(){
         return vid;
@@ -64,7 +64,7 @@ public class Constants {
         if(env_type.equals("QAS")){
             memberAddr="157260148";
         }
-        else memberAddr="157228451";
+        else memberAddr="157269452";
     }
     public static String getMemberAddr(){
         return memberAddr;
@@ -79,7 +79,7 @@ public class Constants {
         if(env_type.equals("QAS")){
             BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IldCV0RSb3VXMVU4TEJRIiwidWlkIjoyMDg1OTUsInRpbWUiOjE2Mzk3NDY1NjkuMDUxNDYzfQ.AxUTloSxRNm168egg5RQnTDiSbmAH0YZLOGcM9hJiAk";
         }
-        else BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IkF6WGRlLVFUNHdid0FBIiwidWlkIjoyMTAwMzYsInRpbWUiOjE2NDA2NzY4MzcuODAxOTk1fQ.K9JfDVDu-wk5TH08_biYkdE0fsdGCM-uOZwinW0PZkU";
+        else BBADMINAUTHTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFmZiI6IkFrNU4wTXFpWi1EQ3FBIiwidWlkIjoyMDg1NzQsInRpbWUiOjE2NDYyODk4MjIuMzY1MTYyfQ.7J_RjHpa5HxgYBBYeL5olaH0IK4ZI1HPO0gz6UYCr1s";
     }
     public static String getBBADMINAUTHTOKEN(){
         return BBADMINAUTHTOKEN;

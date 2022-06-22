@@ -17,7 +17,7 @@ import java.util.List;
 public class CreateOrder {
     @Then("I create order")
     public void createOrder() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         List<Header> list = new ArrayList<>();
         list.add(RequestHeaders.x_entry_context);
         list.add(RequestHeaders.x_entry_context_id);

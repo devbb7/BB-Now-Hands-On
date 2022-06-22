@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 public class TaskCompletion {
     @Then("I do task completion")
     public void taskCompletion() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         List<Header> list = new ArrayList<>();
         list.add(RequestHeaders.x_tracker);
         list.add(RequestHeaders.x_caller_picking);
